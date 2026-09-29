@@ -18,7 +18,9 @@
 available_tables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
                     11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
-menu = ["Tea", "Coffee", "Sandwich", "Salad", "Fruit", "Pastry", "Soup", "Juice", "Water", "Soda"]
+
+products = ["Tea", "Coffee", "Sandwich", "Salad", "Fruit", "Pastry", "Soup", "Juice", "Water", "Soda"]
+prices = [18.50, 24.00, 42.00, 12.75, 15.00, 20.00, 18.00, 14.00, 10.00, 16.00]
 
 print("\nWelcome to Juniper Café Collective!")
 table_number = int(input("Please enter your table number: "))
@@ -35,12 +37,17 @@ client_name = input("Please enter your name: ")
 client_name_upper = client_name.upper()
 
 print(f"\nHi and welcome, {client_name_upper}!")
-print("Today's menu:")
-for item in menu:
-    print(f"- {item}")
+
+name = "JUPITER MENU"
+print("\nWhat would you like to order?\n")
+print(f"................{name:.^8}................")
+print(f"{'Product':<20}{'Price (SEK)':>20}")
+
+for index in range(len(products)):
+    print(f"{index + 1}. {products[index]} {'-':>20} {prices[index]:.2f} SEK")
 
 # # - ask for three product names
-product1 = input("Enter the name of the first product: ")
+product1 = input("\nEnter the name of the first product: ")
 product2 = input("Enter the name of the second product: ")
 product3 = input("Enter the name of the third product: ")
 
