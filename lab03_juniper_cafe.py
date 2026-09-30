@@ -22,8 +22,10 @@ available_tables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
 products = ["Tea", "Coffee", "Sandwich", "Salad", "Fruit", "Pastry", "Soup", "Juice", "Water", "Soda"]
 prices = [18.50, 24.00, 42.00, 12.75, 15.00, 20.00, 18.00, 14.00, 10.00, 16.00]
 
+takeaway_charge = 5.00
+
 print("\nWelcome to Juniper Café Collective!")
-table_number = int(input("Please enter your table number: "))
+table_number = int(input("\nPlease enter your table number: "))
 
 
 if table_number in available_tables:
@@ -31,22 +33,40 @@ if table_number in available_tables:
 else:
     print("Invalid table number.")
 
-# # - ask for the client's name
+# # takeaway-------------------------------------------------------------------------------------
+
+takeaway = input("\nIs this order for takeaway? (yes/no): ").strip().lower()
+if takeaway == "yes":
+    print(f"\nA takeaway charge of {takeaway_charge:.2f} SEK will be added to your total.")
+ 
+elif takeaway == "no":
+    print("\nNo takeaway charge will be added to your total.")
+else:
+    print("\nInvalid input. Please enter 'yes' or 'no'.")
+
+
+# # - ask for the client's name------------------------------------------------------------------
 # # - display the client's name in uppercase
+
 client_name = input("Please enter your name: ")
 client_name_upper = client_name.upper()
-
 print(f"\nHi and welcome, {client_name_upper}!")
 
-name = "JUPITER MENU"
+# ------------------------------------------------------------------------------------------------
+
+name = "JUNIPER MENU"
+
 print("\nWhat would you like to order?\n")
 print(f"................{name:.^8}................")
-print(f"{'Product':<20}{'Price (SEK)':>20}")
+print(f"{'Product':<34}{'Price (SEK)':>12}")
 
 for index in range(len(products)):
-    print(f"{index + 1}. {products[index]} {'-':>20} {prices[index]:.2f} SEK")
+    product_item = f"{index + 1}. {products[index]}"
+    print(f"{product_item:-<34}{prices[index]:>7.2f} SEK")
+   
 
-# # - ask for three product names
+# # - ask for three product names----------------------------------------------------------------
+
 product1 = input("\nEnter the name of the first product: ")
 product2 = input("Enter the name of the second product: ")
 product3 = input("Enter the name of the third product: ")
@@ -62,6 +82,8 @@ price3 = float(input(f"Enter the price of {product3}: "))
 
 # # - calculate the subtotal of all three products
 subtotal = price1 + price2 + price3
+if takeaway == "yes":
+    subtotal += takeaway_charge   
 print (f"\nSubtotal: {subtotal:.2f} SEK")
 
 # # - display every price with exactly two decimal places

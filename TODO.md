@@ -20,9 +20,9 @@ Implemented:
 ## Next Session
 
 ### 1. Finish menu presentation
-- [ ] Change `JUPITER MENU` to `JUNIPER MENU`
-- [ ] Improve product/price alignment
-- [ ] Add take-away charge below the normal menu
+- [x] Change `JUPITER MENU` to `JUNIPER MENU`
+- [x] Improve product/price alignment
+- [x] Add take-away charge to the subtotal and input request to the client
 
 ### 2. Improve product selection
 - [ ] Customer selects products from the existing menu
