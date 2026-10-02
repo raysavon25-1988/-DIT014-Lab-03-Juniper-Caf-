@@ -21,7 +21,8 @@ available_tables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
 
 products = ["Tea", "Coffee", "Sandwich", "Salad", "Fruit", "Pastry", "Soup", "Juice", "Water", "Soda"]
 prices = [18.50, 24.00, 42.00, 12.75, 15.00, 20.00, 18.00, 14.00, 10.00, 16.00]
-
+ordered_products = []
+ordered_prices = []
 takeaway_charge = 5.00
 
 print("\nWelcome to Juniper Café Collective!")
@@ -65,31 +66,36 @@ for index in range(len(products)):
     print(f"{product_item:-<34}{prices[index]:>7.2f} SEK")
    
 
-# # - ask for three product names----------------------------------------------------------------
+# # - product selection ----------------------------------------------------------------
 
-product1 = input("\nEnter the name of the first product: ")
-product2 = input("Enter the name of the second product: ")
-product3 = input("Enter the name of the third product: ")
+
+product_choice = int(input("Select a product: "))
+
+index = product_choice - 1
+ordered_products.append(products[index])
+ordered_prices.append(prices[index])
+
+print("Customer selected:", product_choice)
 
 # # - convert the table number and prices to appropriate numeric types
-products = [product1, product2, product3]
+# products = [product1, product2, product3]
 
 # # - ask for the price of each product
-price1 = float(input(f"Enter the price of {product1}: "))
-price2 = float(input(f"Enter the price of {product2}: "))
-price3 = float(input(f"Enter the price of {product3}: "))
+# price1 = float(input(f"Enter the price of {product1}: "))
+# price2 = float(input(f"Enter the price of {product2}: "))
+# price3 = float(input(f"Enter the price of {product3}: "))
 
 
 # # - calculate the subtotal of all three products
-subtotal = price1 + price2 + price3
+subtotal = sum(ordered_prices)
 if takeaway == "yes":
     subtotal += takeaway_charge   
 print (f"\nSubtotal: {subtotal:.2f} SEK")
 
 # # - display every price with exactly two decimal places
-print(f"Price of {product1}: {price1:.2f} SEK")
-print(f"Price of {product2}: {price2:.2f} SEK")
-print(f"Price of {product3}: {price3:.2f} SEK")
+# print(f"Price of {product1}: {price1:.2f} SEK")
+# print(f"Price of {product2}: {price2:.2f} SEK")
+# print(f"Price of {product3}: {price3:.2f} SEK")
 
 # # - align product names and prices into a readable receipt
 # # - display the table number, client name and subtotal in the required format

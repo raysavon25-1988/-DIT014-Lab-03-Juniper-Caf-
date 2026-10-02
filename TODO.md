@@ -32,10 +32,10 @@ Implemented:
 - [ ] Do not overwrite the original `products` list
 
 ### 3. Take-away
-- [ ] Ask whether the order/product is take-away
-- [ ] Define the exact take-away pricing rule
-- [ ] Add the charge only when applicable
-- [ ] Include the charge in the subtotal
+- [x] Ask whether the order/product is take-away
+- [x] Define the exact take-away pricing rule
+- [x] Add the charge only when applicable
+- [x] Include the charge in the subtotal
 - [ ] Show it clearly on the receipt
 
 ### 4. Complete receipt
